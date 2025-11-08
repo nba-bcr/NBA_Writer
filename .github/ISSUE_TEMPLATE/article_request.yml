@@ -1,0 +1,72 @@
+name: 記事生成リクエスト
+description: NBA記事を自動生成するためのIssueを作成
+title: "[記事]: "
+labels: ["article-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## NBA記事生成リクエスト
+        このフォームに記入すると、自動的にNBA記事が生成されます。
+
+  - type: input
+    id: topic
+    attributes:
+      label: トピック
+      description: 記事のトピックを入力してください（例：レブロン・ジェームズのキャリア分析）
+      placeholder: "例: ステフィン・カリーの3ポイント革命"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: style
+    attributes:
+      label: 記事のスタイル
+      description: どのようなスタイルで記事を書きますか？
+      options:
+        - ミルクボーイ風漫才
+        - 解説記事
+        - ランキング形式
+        - インタビュー形式
+        - 統計分析
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: 詳細・要望
+      description: 記事に含めたい内容や特別な要望があれば記入してください
+      placeholder: |
+        - 特定の試合について触れてほしい
+        - 統計データを含めてほしい
+        - 比較したい選手がいる
+        など
+    validations:
+      required: false
+
+  - type: input
+    id: tags
+    attributes:
+      label: タグ
+      description: 記事に付けるタグ（カンマ区切り）
+      placeholder: "NBA, バスケットボール, 選手分析"
+      value: "NBA, バスケットボール"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: カテゴリー
+      description: 記事のカテゴリーを選択してください
+      options:
+        - NBA分析
+        - 選手紹介
+        - 試合レビュー
+        - 歴史・レジェンド
+        - 統計・データ
+      default: 0
+    validations:
+      required: true
